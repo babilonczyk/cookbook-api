@@ -7,6 +7,7 @@ RSpec.describe "categories#index", type: :request do
     jsonapi_get "/api/v1/categories", params: params
   end
 
+  # -------------------------------------------------------
   describe 'basic fetch' do
     let!(:category1) { create(:category) }
     let!(:category2) { create(:category) }

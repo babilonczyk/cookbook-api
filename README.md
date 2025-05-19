@@ -51,10 +51,25 @@ bundle exec rspec
 
 ### 1. Implement Likes:
 
-    - User must be able to like a recipe.
-    - User must be able to unlike a recipe.
-    - User must be able to get a list of recipes they have liked.
-    - Likes count need to be display on recipe index page.
+- User must be able to like a recipe.
+
+```ruby
+    GET api/v1/recipes?filter[liked_by_user_ids][eq]=1000,1222
+```
+
+- User must be able to unlike a recipe.
+
+```ruby
+    POST api/v1/recipes/100/like
+```
+
+- User must be able to get a list of recipes they have liked.
+
+```ruby
+    DELETE api/v1/recipes/100/unlike
+```
+
+- Likes count need to be display on recipe index page.
 
 ### 2. Add Stats for Recipes Grouped by Week/Month:
 

@@ -7,6 +7,7 @@ RSpec.describe "authors#index", type: :request do
     jsonapi_get "/api/v1/authors", params: params
   end
 
+  # -------------------------------------------------------
   describe 'basic fetch' do
     let!(:author1) { create(:author) }
     let!(:author2) { create(:author) }

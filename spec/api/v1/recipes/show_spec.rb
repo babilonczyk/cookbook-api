@@ -7,6 +7,7 @@ RSpec.describe "recipes#show", type: :request do
     jsonapi_get "/api/v1/recipes/#{recipe.id}", params: params
   end
 
+  # -------------------------------------------------------
   describe 'basic fetch' do
     let!(:recipe) { create(:recipe) }
 

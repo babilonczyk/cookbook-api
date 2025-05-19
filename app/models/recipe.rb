@@ -8,4 +8,5 @@ class Recipe < ApplicationRecord
   belongs_to :author
   has_many :recipe_categories, dependent: :destroy
   has_many :categories, through: :recipe_categories
+  has_many :likes, dependent: :destroy
 end

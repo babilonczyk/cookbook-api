@@ -1,4 +1,4 @@
-class RecipeResource < ApplicationResource
+class RecipeResource < ApplicationResource  
   attribute :title, :string
   attribute :text, :string
   attribute :difficulty, :string
@@ -7,4 +7,11 @@ class RecipeResource < ApplicationResource
 
   belongs_to :author
   many_to_many :categories
+  has_many :likes
+
+  filter :liked_by_user_ids, :integer do
+    eq do |scope, user_ids|
+      scope.joins(:likes).where(likes: { user_id: user_ids })
+    end
+  end
 end

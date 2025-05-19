@@ -26,6 +26,22 @@ RSpec.describe RecipeResource, type: :resource do
         expect(d.map(&:id)).to eq([recipe2.id])
       end
     end
+
+    context 'by liked_by_user_ids' do
+      let!(:user) { create(:user) }
+      let!(:liked_recipe) { create(:recipe) }
+      let!(:unliked_recipe) { create(:recipe) }
+    
+      before do
+        create(:like, user: user, recipe: liked_recipe)
+        params[:filter] = { liked_by_user_ids: { eq: user.id } }
+      end
+    
+      it 'returns only recipes liked by the user' do
+        render
+        expect(d.map(&:id)).to eq([liked_recipe.id])
+      end
+    end
   end
 
   describe 'sorting' do
