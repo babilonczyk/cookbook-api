@@ -88,9 +88,15 @@ GET /api/v1/authors/100/recipe_stats?group_by=week
 
 ### 3. Add Featured Recipes:
 
-    Add an endpoint for authors to mark and unmark their recipes as "featured" with constraints:
-    - up to 3 featured recipes at one time
-    - the recipe is in the top 10 by likes count for the author
+Add an endpoint for authors to mark and unmark their recipes as "featured" with constraints:
+
+- up to 3 featured recipes at one time
+- the recipe is in the top 10 by likes count for the author
+
+```ruby
+POST api/v1/recipes/99923/feature
+DELETE api/v1/recipes/99923/unfeature
+```
 
 ## Existing Endpoints
 

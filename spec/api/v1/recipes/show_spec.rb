@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "recipes#show", type: :request do
+RSpec.describe 'recipes#show', type: :request do
   let(:params) { {} }
 
   subject(:make_request) do

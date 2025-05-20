@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "recipes#like", type: :request do
+RSpec.describe 'recipes#like', type: :request do
   let(:user) { create(:user) }
   let!(:recipe) { create(:recipe) }
 
@@ -17,12 +17,12 @@ RSpec.describe "recipes#like", type: :request do
   # -------------------------------------------------------
   describe 'liking a recipe' do
     it 'creates a like and returns 201' do
-      expect {
+      expect do
         make_request
-      }.to change { user.likes.count }.by(1)
+      end.to change { user.likes.count }.by(1)
 
       expect(response.status).to eq(201), response.body
-      expect(response.parsed_body["message"]).to eq("Recipe liked successfully")
+      expect(response.parsed_body['message']).to eq('Recipe liked successfully')
     end
 
     # -------------------------------------------------------
@@ -32,15 +32,15 @@ RSpec.describe "recipes#like", type: :request do
       end
 
       it 'returns 422 and does not create a new like' do
-        expect {
+        expect do
           make_request
-        }.not_to change { user.likes.count }
+        end.not_to(change { user.likes.count })
 
         expect(response.status).to eq(422), response.body
-        expect(response.parsed_body["errors"]).to include("Recipe already liked")
+        expect(response.parsed_body['errors']).to include('Recipe already liked')
       end
     end
-    
+
     # -------------------------------------------------------
     context 'when the recipe does not exist' do
       let(:recipe_id) { -1 }
@@ -48,7 +48,7 @@ RSpec.describe "recipes#like", type: :request do
       it 'returns 404' do
         make_request
         expect(response.status).to eq(404)
-        expect(response.parsed_body["errors"]).to include("Recipe not found")
+        expect(response.parsed_body['errors']).to include('Recipe not found')
       end
     end
   end

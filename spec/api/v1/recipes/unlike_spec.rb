@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "recipes#unlike", type: :request do
+RSpec.describe 'recipes#unlike', type: :request do
   let(:user) { create(:user) }
   let!(:recipe) { create(:recipe) }
 
@@ -23,12 +23,12 @@ RSpec.describe "recipes#unlike", type: :request do
       end
 
       it 'removes the like and returns 200' do
-        expect {
+        expect do
           make_request
-        }.to change { user.likes.count }.by(-1)
+        end.to change { user.likes.count }.by(-1)
 
         expect(response.status).to eq(200), response.body
-        expect(response.parsed_body["message"]).to eq("Recipe unliked successfully")
+        expect(response.parsed_body['message']).to eq('Recipe unliked successfully')
       end
     end
 
@@ -38,7 +38,7 @@ RSpec.describe "recipes#unlike", type: :request do
         make_request
 
         expect(response.status).to eq(404), response.body
-        expect(response.parsed_body["errors"]).to include("Recipe not found")
+        expect(response.parsed_body['errors']).to include('Recipe not found')
       end
     end
 
@@ -54,7 +54,7 @@ RSpec.describe "recipes#unlike", type: :request do
         make_request
 
         expect(response.status).to eq(404), response.body
-        expect(response.parsed_body["errors"]).to include("Recipie wasn't liked")
+        expect(response.parsed_body['errors']).to include("Recipe wasn't liked")
       end
     end
   end

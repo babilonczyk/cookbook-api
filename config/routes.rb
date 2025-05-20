@@ -10,10 +10,12 @@ Rails.application.routes.draw do
       member do
         post 'like'
         delete 'unlike'
+        post 'feature'
+        delete 'unfeature'
       end
     end
     resources :likes, only: %i[index]
-    
+
     mount VandalUi::Engine, at: '/vandal'
   end
 end

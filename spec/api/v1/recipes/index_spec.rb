@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "recipes#index", type: :request do
+RSpec.describe 'recipes#index', type: :request do
   let(:params) { {} }
 
   subject(:make_request) do
-    jsonapi_get "/api/v1/recipes", params: params
+    jsonapi_get '/api/v1/recipes', params: params
   end
 
   # -------------------------------------------------------
@@ -14,7 +14,7 @@ RSpec.describe "recipes#index", type: :request do
 
     it 'works' do
       expect(RecipeResource).to receive(:all).and_call_original
-      
+
       make_request
 
       expect(response.status).to eq(200), response.body
@@ -28,11 +28,11 @@ RSpec.describe "recipes#index", type: :request do
     let(:user) { create(:user) }
     let!(:liked_recipe) { create(:recipe) }
     let!(:unliked_recipe) { create(:recipe) }
-  
+
     before do
       create(:like, user: user, recipe: liked_recipe)
     end
-  
+
     let(:params) do
       { filter: { liked_by_user_ids: { eq: user.id } } }
     end
