@@ -57,6 +57,7 @@ group :development, :test do
   gem 'faker', '~> 2.5'
   gem 'graphiti_spec_helpers'
   gem 'rspec-rails', '~> 4.0.0beta2'
+  gem 'rubocop', require: false
 end
 
 group :test do
