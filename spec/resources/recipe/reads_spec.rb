@@ -3,12 +3,25 @@ require 'rails_helper'
 RSpec.describe RecipeResource, type: :resource do
   describe 'serialization' do
     let!(:recipe) { create(:recipe) }
+    let!(:user_1) { create(:user) }
+    let!(:user_2) { create(:user) }
+
+    before do
+      create(:like, recipe: recipe, user: user_1)
+      create(:like, recipe: recipe, user: user_2)
+    end
 
     it 'works' do
       render
       data = jsonapi_data[0]
       expect(data.id).to eq(recipe.id)
       expect(data.jsonapi_type).to eq('recipes')
+    end
+
+    it 'includes likes count' do
+      render
+      data = jsonapi_data[0]
+      expect(data.attributes[:likes_count]).to eq(2)
     end
   end
 

@@ -71,6 +71,10 @@ bundle exec rspec
 
 - Likes count need to be display on recipe index page.
 
+```ruby
+    Added  counter cache on Like for recpies and exposed it as a new attribute in RecipeResource
+```
+
 ### 2. Add Stats for Recipes Grouped by Week/Month:
 
     Add a way to get stats (recipes count and total likes) for author recipes grouped by
