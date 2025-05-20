@@ -37,19 +37,13 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "name": {
-        },
-        "bio": {
-        },
-        "fb": {
-        },
-        "ig": {
-        }
+        "id": {},
+        "name": {},
+        "bio": {},
+        "fb": {},
+        "ig": {}
       },
       "filters": {
         "id": {
@@ -162,15 +156,11 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "name": {
-        },
-        "group": {
-        }
+        "id": {},
+        "name": {},
+        "group": {}
       },
       "filters": {
         "id": {
@@ -258,13 +248,10 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "created_at": {
-        }
+        "id": {},
+        "created_at": {}
       },
       "filters": {
         "id": {
@@ -357,23 +344,15 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "title": {
-        },
-        "text": {
-        },
-        "difficulty": {
-        },
-        "likes_count": {
-        },
-        "preparation_time": {
-        },
-        "created_at": {
-        }
+        "id": {},
+        "title": {},
+        "text": {},
+        "difficulty": {},
+        "likes_count": {},
+        "preparation_time": {},
+        "created_at": {}
       },
       "filters": {
         "id": {
@@ -536,15 +515,11 @@
           "description": null
         }
       },
-      "extra_attributes": {
-      },
+      "extra_attributes": {},
       "sorts": {
-        "id": {
-        },
-        "email": {
-        },
-        "created_at": {
-        }
+        "id": {},
+        "email": {},
+        "created_at": {}
       },
       "filters": {
         "id": {

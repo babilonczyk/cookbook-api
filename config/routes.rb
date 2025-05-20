@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   scope path: ApplicationResource.endpoint_namespace, defaults: { format: :jsonapi } do
-    resources :authors, only: %i[index show]
+    resources :authors, only: %i[index show] do
+      member do
+        get :recipe_stats
+      end
+    end
     resources :categories, only: :index
     resources :recipes, only: %i[index show] do
       member do

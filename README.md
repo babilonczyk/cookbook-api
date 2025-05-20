@@ -54,32 +54,37 @@ bundle exec rspec
 - User must be able to like a recipe.
 
 ```ruby
-    GET api/v1/recipes?filter[liked_by_user_ids][eq]=1000,1222
+GET api/v1/recipes?filter[liked_by_user_ids][eq]=1000,1222
 ```
 
 - User must be able to unlike a recipe.
 
 ```ruby
-    POST api/v1/recipes/100/like
+POST api/v1/recipes/100/like
 ```
 
 - User must be able to get a list of recipes they have liked.
 
 ```ruby
-    DELETE api/v1/recipes/100/unlike
+DELETE api/v1/recipes/100/unlike
 ```
 
 - Likes count need to be display on recipe index page.
 
-```ruby
-    Added  counter cache on Like for recpies and exposed it as a new attribute in RecipeResource
+```text
+Added  counter cache on Like for recipes and exposed it as a new attribute in RecipeResource
 ```
 
 ### 2. Add Stats for Recipes Grouped by Week/Month:
 
-    Add a way to get stats (recipes count and total likes) for author recipes grouped by
-    - category
-    - week/month of creation.
+Add a way to get stats (recipes count and total likes) for author recipes grouped by
+
+- category
+- week/month of creation.
+
+```ruby
+GET /api/v1/authors/100/recipe_stats?group_by=week
+```
 
 ### 3. Add Featured Recipes:
 
